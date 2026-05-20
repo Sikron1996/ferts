@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AsciiPunks Mint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="left">
+        <div class="kicker">ASCII / ERC721 / ETHEREUM</div>
+        <h1>AsciiPunks</h1>
+        <p class="desc">QrPunk: a unique ASCII art collection inspired by the original Crypto Punk series. Dive into the world of retro digital art with our distinctive creations.</p>
+
+        <div class="terminal">
+          <p>&gt; supply: 10000</p>
+          <p>&gt; first mint: free</p>
+          <p>&gt; next mints: 0.0001 ETH</p>
+          <p>&gt; max wallet: 30</p>
+        </div>
+
+        <div class="connect">
+          <button id="connectInjectedBtn">Browser Wallet</button>
+          <button id="connectWcBtn">WalletConnect</button>
+          <button id="disconnectBtn">Disconnect</button>
+          <span id="wallet">not connected</span>
+        </div>
+
+        <div class="mintBox">
+          <div class="counter">
+            <button id="minusBtn">−</button>
+            <input id="amountInput" value="1" />
+            <button id="plusBtn">+</button>
+          </div>
+          <div class="priceBox">
+            <span>Total price</span>
+            <b id="priceText">FREE</b>
+          </div>
+          <button id="mintBtn" class="mint">Mint AsciiPunks</button>
+        </div>
+
+        <div class="progressWrap">
+          <div class="progressTop">
+            <span>Mint progress</span>
+            <span id="mintedText">0 / 10000</span>
+          </div>
+          <div class="bar"><div id="progressBar"></div></div>
+        </div>
+
+        <p id="status"></p>
+      </div>
+
+      <div class="right">
+        <div class="mainPreview"><img id="mainImg" src="assets/preview1.jpeg" alt="AsciiPunk preview"></div>
+        <div class="thumbs">
+          <img src="assets/preview1.jpeg" data-img="assets/preview1.jpeg" class="active">
+          <img src="assets/preview2.jpeg" data-img="assets/preview2.jpeg">
+          <img src="assets/preview3.jpeg" data-img="assets/preview3.jpeg">
+          <img src="assets/preview4.jpeg" data-img="assets/preview4.jpeg">
+        </div>
+      </div>
+    </section>
+
+    <section class="gallerySection">
+      <div class="galleryHead">
+        <div>
+          <div class="kicker">LIVE CONTRACT GALLERY</div>
+          <h2>Minted AsciiPunks</h2>
+        </div>
+        <button id="loadGalleryBtn">Load Gallery</button>
+      </div>
+      <p class="galleryNote">Shows already minted NFTs from tokenURI(). Loads the latest minted items first.</p>
+      <div id="gallery" class="gallery"></div>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
